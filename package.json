@@ -1,11 +1,38 @@
 {
   "name": "@yuckabug/stringpea",
-  "module": "src/index.ts",
   "type": "module",
+  "files": [
+    "dist"
+  ],
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "scripts": {
+    "types:check": "tsc --noEmit",
+    "format:check": "biome format",
+    "format:fix": "biome format --write",
+    "lint:check": "biome lint",
+    "lint:fix": "biome lint --write",
+    "check": "run-p *:check",
+    "fix": "run-s *:fix",
+    "build": "bunup"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@biomejs/biome": "^2.2.6",
+    "@types/bun": "latest",
+    "bunup": "^0.14.20",
+    "lefthook": "^1.13.6",
+    "npm-run-all2": "^8.0.4"
   },
   "peerDependencies": {
     "typescript": "^5"
-  }
+  },
+  "packageManager": "bun@1.3.0"
 }
