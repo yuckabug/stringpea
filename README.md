@@ -1,5 +1,7 @@
 # @yuckabug/stringpea 🫛✨
 
+[![codecov](https://codecov.io/gh/yuckabug/stringpea/graph/badge.svg?token=a6Q74e9ZzC)](https://codecov.io/gh/yuckabug/stringpea)
+
 A minimal library for detecting confusable strings.
 
 ## Installation 📦
