@@ -6,7 +6,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/yuckabug/stringpea.git"
+    "url": "git+https://github.com/yuckabug/stringpea.git"
   },
   "homepage": "https://yuckabug.org",
   "keywords": [
