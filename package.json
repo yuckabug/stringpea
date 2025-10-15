@@ -37,6 +37,9 @@
       }
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "types:check": "tsc --noEmit",
     "format:check": "biome format",
