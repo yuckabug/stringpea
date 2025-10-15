@@ -4,11 +4,11 @@
     "": {
       "name": "@yuckabug/stringpea",
       "devDependencies": {
-        "@biomejs/biome": "^2.2.6",
+        "@biomejs/biome": "2.2.6",
         "@types/bun": "latest",
-        "bunup": "^0.14.20",
-        "lefthook": "^1.13.6",
-        "npm-run-all2": "^8.0.4",
+        "bunup": "0.14.20",
+        "lefthook": "1.13.6",
+        "npm-run-all2": "8.0.4",
       },
     },
   },
