@@ -1,9 +1,32 @@
 {
   "name": "@yuckabug/stringpea",
+  "version": "0.1.0",
+  "description": "A minimal library for detecting confusable strings.",
+  "author": "Elijah Passmore <elijah.passmore@yuckabug.org>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yuckabug/stringpea.git"
+  },
+  "homepage": "https://yuckabug.org",
+  "keywords": [
+    "string",
+    "confusable",
+    "levenshtein",
+    "distance",
+    "homoglyph",
+    "similarity",
+    "unicode"
+  ],
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE.md"
   ],
+  "sideEffects": false,
+  "main": "./dist/index.js",
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -23,7 +46,8 @@
     "check": "run-p *:check",
     "fix": "run-s *:fix",
     "update:confusables": "bun run scripts/update-confusables.ts",
-    "build": "bunup"
+    "build": "bunup",
+    "prepublishOnly": "bun run check && bun test && bun run build"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.6",
@@ -31,9 +55,6 @@
     "bunup": "^0.14.20",
     "lefthook": "^1.13.6",
     "npm-run-all2": "^8.0.4"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
   },
   "packageManager": "bun@1.3.0"
 }
