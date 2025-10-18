@@ -56,9 +56,11 @@
     "fix": "run-s *:fix",
     "update:confusables": "bun run scripts/update-confusables.ts",
     "build": "bunup && size-limit",
-    "prepublishOnly": "bun run check && bun test && bun run build"
+    "types:verify": "attw --pack . --ignore-rules=no-resolution",
+    "prepublishOnly": "bun run check && bun test && bun run build && bun run types:verify"
   },
   "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.2",
     "@biomejs/biome": "2.2.6",
     "@size-limit/preset-small-lib": "11.2.0",
     "@types/bun": "latest",
