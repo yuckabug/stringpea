@@ -40,6 +40,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "size-limit": [
+    {
+      "path": "./dist/index.js",
+      "limit": "30 KB"
+    }
+  ],
   "scripts": {
     "types:check": "tsc --noEmit",
     "format:check": "biome format",
@@ -49,15 +55,17 @@
     "check": "run-p *:check",
     "fix": "run-s *:fix",
     "update:confusables": "bun run scripts/update-confusables.ts",
-    "build": "bunup",
+    "build": "bunup && size-limit",
     "prepublishOnly": "bun run check && bun test && bun run build"
   },
   "devDependencies": {
     "@biomejs/biome": "2.2.6",
+    "@size-limit/preset-small-lib": "11.2.0",
     "@types/bun": "latest",
     "bunup": "0.14.20",
     "lefthook": "1.13.6",
-    "npm-run-all2": "8.0.4"
+    "npm-run-all2": "8.0.4",
+    "size-limit": "11.2.0"
   },
   "packageManager": "bun@1.3.0"
 }
