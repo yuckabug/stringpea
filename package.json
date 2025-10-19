@@ -55,9 +55,8 @@
     "check": "run-p *:check",
     "fix": "run-s *:fix",
     "update:confusables": "bun run scripts/update-confusables.ts",
-    "build": "bunup && size-limit",
-    "types:verify": "attw --pack . --ignore-rules=no-resolution",
-    "prepublishOnly": "bun run check && bun test && bun run build && bun run types:verify"
+    "build": "bunup && attw --pack . --ignore-rules=no-resolution && size-limit",
+    "prepublishOnly": "bun run check && bun test && bun run build"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.2",
