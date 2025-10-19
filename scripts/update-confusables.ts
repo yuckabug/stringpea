@@ -64,14 +64,39 @@ function parseConfusables(str: string): Record<string, string> {
 }
 
 /**
+ * Encode confusables into a compact format.
+ *
+ * Groups confusables by their canonical form to reduce JSON size.
+ * @param data The parsed confusables data.
+ * @returns Compact encoding as [canonical, confusables] pairs.
+ */
+function encodeCompact(data: Record<string, string>): [string, string][] {
+  const groups = new Map<string, string[]>();
+
+  // Group all confusables by their canonical form
+  for (const [src, dst] of Object.entries(data)) {
+    if (!groups.has(dst)) {
+      groups.set(dst, []);
+    }
+    groups.get(dst)?.push(src);
+  }
+
+  // Convert to array format and join confusables into strings
+  return Array.from(groups.entries()).map(([canonical, confusables]) => [canonical, confusables.join("")]);
+}
+
+/**
  * Main function to update the confusables.txt file.
  *
- * This will update the `SAVE_PATH` file with the parsed confusables.txt file.
+ * This will update the `SAVE_PATH` file with the parsed confusables.txt file
+ * encoded in a compact format to reduce bundle size.
  */
 async function main() {
   const str = await getConfusables();
   const result = parseConfusables(str);
-  fs.writeFileSync(SAVE_PATH, JSON.stringify(result, null, "  "));
+  const compact = encodeCompact(result);
+
+  fs.writeFileSync(SAVE_PATH, JSON.stringify(compact, null, "  "));
 }
 
 await main();
