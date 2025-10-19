@@ -16,9 +16,9 @@ npm install @yuckabug/stringpea
 import { getConfusableDistance } from "@yuckabug/stringpea";
 
 // Returns the confusable distance between two strings
-console.log(getConfusableDistance("HELL0", "HELLO")); // 0 - confusably identical
+console.log(getConfusableDistance("HELL0", "HELLO"));   // 0 - confusably identical
 console.log(getConfusableDistance("paypa1", "paypal")); // 0 - '1' looks like 'l'
-console.log(getConfusableDistance("admin", "adm1n")); // 1 - one character different
+console.log(getConfusableDistance("admin", "adm1n"));   // 1 - one character different
 ```
 
 ## How It Works 🤔⚙️
@@ -30,7 +30,7 @@ The returned distance represents the minimum number of single-character edits ne
 
 ## Common Patterns 🎯
 
-### Absolute Distance Threshold 📏
+### Absolute Distance Threshold
 ```ts
 const distance = getConfusableDistance("admin", "adm1n");
 if (distance <= 1) {
@@ -38,7 +38,7 @@ if (distance <= 1) {
 }
 ```
 
-### Proportional Threshold (for different length strings) 📊
+### Proportional Threshold (for different length strings)
 ```ts
 const a = "category";
 const b = "bategory";
