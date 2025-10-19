@@ -1,6 +1,6 @@
 {
   "name": "@yuckabug/stringpea",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A minimal library for detecting confusable strings.",
   "author": "Elijah Passmore <elijah.passmore@yuckabug.org>",
   "license": "MIT",
