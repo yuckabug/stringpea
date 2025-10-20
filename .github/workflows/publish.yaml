@@ -24,5 +24,7 @@ jobs:
       - run: bun install
 
       # This will run the `prepublishOnly` script
+      # Shouldn't have to add flags here
+      # See https://docs.npmjs.com/trusted-publishers#automatic-provenance-generation
       - name: run publish
-        run: npm publish --access public --provenance
+        run: npm publish
