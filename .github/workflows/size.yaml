@@ -20,6 +20,6 @@ jobs:
           fetch-depth: 0
 
       - name: run size-limit
-        uses: yuckabug/size-limit-action@v0.1.0
+        uses: yuckabug/size-limit-action@d95834bfff216c7d9c5fbb2a0050866397bc7ceb # v0.1.0
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
